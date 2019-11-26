@@ -3,9 +3,14 @@
 <div id='link_errors'>
 </div>
 
+
 <%= form_with model: @link do |form| %>
-  <%= form.text_field :source_link %>
-  <%= form.submit %>
+  <div class="input-group mb-3">
+    <%= form.text_field :source_link, class: 'form-control' %>
+    <div class="input-group-append">
+      <%= submit_tag 'Create link', class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
 <% end %>
 
 <div id="short_link">

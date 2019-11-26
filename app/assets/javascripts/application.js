@@ -17,3 +17,4 @@
 //= require jquery
 //= require chartkick
 //= require Chart.bundle
+//= require bootstrap-sprockets
