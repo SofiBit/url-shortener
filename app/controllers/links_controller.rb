@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  include Links
+
   def show
     link = Link.find_by(short_url: request.original_url)
     redirect_to link.source_link
@@ -9,8 +11,13 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = Link.create(links_params)
-    respond_to { |format| format.js }
+    if link_exist?(links_params['source_link'])
+      @link = search_link(links_params['source_link'])
+      respond_to { |format| format.js }
+    else
+      @link = Link.create(links_params)
+      respond_to { |format| format.js }
+    end
   end
 
   private

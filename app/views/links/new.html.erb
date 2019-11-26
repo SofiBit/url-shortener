@@ -1,5 +1,8 @@
 <h1>Enter your link</h1>
 
+<div id='link_errors'>
+</div>
+
 <%= form_with model: @link do |form| %>
   <%= form.text_field :source_link %>
   <%= form.submit %>

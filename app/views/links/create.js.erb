@@ -1,1 +1,8 @@
-$("<%= escape_javascript(render 'create') %>").appendTo("#short_link");
+<% if @link.errors.present? %>
+  $("#link_errors").empty();
+  $("<%= escape_javascript(render 'errors') %>").appendTo("#link_errors");
+<% else %>
+  $("#link_errors").empty();
+  $("#short_link").empty();
+  $("<%= escape_javascript(render 'create') %>").appendTo("#short_link");
+<% end %>
