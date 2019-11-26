@@ -1,0 +1,9 @@
+<p>All redirection: <%= Visit.count %></p>
+
+<h1>All links</h1>
+
+<% @links.each do |link| %>
+  <a href="<%= link.short_url %>"><%= link.short_url %></a>
+  <p>Quantity redirection: <%= link.visits.count %></p>
+  <%= pie_chart(countries(link.visits)) %>
+<% end %>

@@ -1,8 +1,14 @@
 class LinksController < ApplicationController
   include Links
+  include Visits
+
+  def index
+    @links = Link.all
+  end
 
   def show
     link = Link.find_by(short_url: request.original_url)
+    create_visit(request.remote_ip, link)
     redirect_to link.source_link
   end
 
