@@ -1,1 +1,2 @@
-<a href="<%= @link.short_url %>"><%= @link.short_url %></a>
+<%= link_to short_url(@link.short_url), link_path(@link.short_url), target: '_blank'%>
+<hr>

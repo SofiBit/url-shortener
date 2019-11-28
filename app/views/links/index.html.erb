@@ -1,9 +1,17 @@
-<p>All redirection: <%= Visit.count %></p>
+<div class="all_redirections">
+  <h2 class="all-links">All redirections</h2>
+  <%= bar_chart statistics_path %>
+</div>
 
-<h1>All links</h1>
+<h3 class="all-links">All links</h3>
 
-<% @links.each do |link| %>
-  <a href="<%= link.short_url %>"><%= link.short_url %></a>
-  <p>Quantity redirection: <%= link.visits.count %></p>
-  <%= pie_chart(countries(link.visits)) %>
-<% end %>
+<ul class="list-group">
+  <% @links.each do |link| %>
+    <li class="list-group-item">
+      <%= link_to short_url(link.short_url), link_path(link.short_url), target: '_blank' %>
+      <%= bar_chart statistics_visit_count_path(link.id) %>
+      <%= pie_chart statistics_visit_from_countries_path(link.id), messages: { empty: "No redirections" } %>
+    </li>
+  <% end %>
+  <%= will_paginate @links %>
+</ul>
