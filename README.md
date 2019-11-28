@@ -50,4 +50,4 @@ RETROSPECTIVE
     If you had more time to work on this? If I had more time, I think I would:
     - add React library 
     - cover the application with tests
-    - change solution 
+    - change the reduction urls approach
