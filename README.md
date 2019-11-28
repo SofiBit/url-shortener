@@ -1,24 +1,53 @@
-# README
+DOCUMENTATION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Local deployment:
 
-Things you may want to cover:
+    1. First of all ensure that you have installed all from above
+    
+    2. Create the folder for your app and clone the repository into it with:
 
-* Ruby version
+            git clone "project clone url"
 
-* System dependencies
+    3. Next step is installing the required gems and project dependencies via:
+    
+            bundle install
+            
+    4. In generated app/config/application.yml you should insert env_variables:
+        PSQL_USERNAME: ''   # Your PSQL username
+        PSQL_PASSWORD: ''   # Your PSQL password
+        APP_HOME: 'http://localhost:3000/'
+        
+    4. After it you should create the database via:
+            
+            rails db:create
 
-* Configuration
+    5. Run migrations with:
+    
+            rails db:migrate
 
-* Database creation
+    6. Run the rails server with:
+    
+            rails s
 
-* Database initialization
 
-* How to run the test suite
+Production environments:
 
-* Services (job queues, cache servers, search engines, etc.)
+     Go to link:
+     
+     https://bitno.herokuapp.com/
 
-* Deployment instructions
 
-* ...
+RETROSPECTIVE
+
+    What went well?
+    
+      In general, everything was fine excluding some points.
+    
+    What didn't go well? 
+    
+     I was choosing the encoding method of the source url for a long time. I tried to start with the reaction, but I realized         that there would not be enough time. 
+
+    If you had more time to work on this? If I had more time, I think I would:
+    - add React library 
+    - cover the application with tests
+    - change solution 
