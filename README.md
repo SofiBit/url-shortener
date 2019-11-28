@@ -13,7 +13,7 @@ Local deployment:
             bundle install
             
     4. In generated app/config/application.yml you should insert env_variables:
-        DATABASE_USERNAME: ''   # Your PSQL username
+        DATABASE_USER: ''   # Your PSQL username
         DATABASE_PASSWORD: ''   # Your PSQL password
         APP_HOME: 'http://localhost:3000/'
         
