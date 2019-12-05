@@ -12,6 +12,23 @@ module Links
   end
 
   def encode(url)
-    Digest::SHA1.hexdigest(url)[8..15]
+    start_number = 8
+    finish_number = 15
+    result = ''
+    loop do
+      counter = 1
+      result = Digest::SHA1.hexdigest(url.to_s)[start_number..finish_number]
+      break if short_url_unique?(result) || counter == 5
+
+      finish_number += 1
+      counter += 1
+    end
+    result
+  end
+
+  def short_url_unique?(result)
+    link = Link.find_by(short_url: result)
+
+    link.nil?
   end
 end
