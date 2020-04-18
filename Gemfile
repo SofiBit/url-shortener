@@ -3,7 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
-gem 'figaro'
+gem 'faker'
+gem 'will_paginate', '~> 3.1.0'
+gem 'bootstrap', '~> 4.3.1'
+gem 'chartkick', '~> 3.3.0'
+gem 'geocoder', '~> 1.5', '>= 1.5.2'
+gem 'jquery-rails', '~> 4.3.5'
+gem 'figaro', '~> 1.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
@@ -38,8 +44,15 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'shoulda-matchers', '~> 3.1', '>= 3.1.1'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry', '~> 0.12.2'
+  gem 'pry-byebug', '~> 3.7.0'
+  gem 'pry-rails', '~> 0.3.9'
+  gem 'factory_bot'
 end
 
 group :development do

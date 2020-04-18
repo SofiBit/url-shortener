@@ -1,0 +1,9 @@
+$("#link_errors").empty();
+$('#new-link')[0].reset();
+
+<% if @link.errors.present? %>
+  $("#short_link").empty();
+  $("<%= escape_javascript(render 'errors') %>").appendTo("#link_errors");
+<% else %>
+  $("<%= escape_javascript(render 'create') %>").prependTo("#short_link");
+<% end %>

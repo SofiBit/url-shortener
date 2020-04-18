@@ -1,0 +1,17 @@
+<h1 class="header">Enter your link</h1>
+
+<div id='link_errors'>
+</div>
+
+
+<%= form_with model: @link, id: 'new-link' do |form| %>
+  <div class="input-group mb-3">
+    <%= form.text_field :source_link, class: 'form-control' %>
+    <div class="input-group-append">
+      <%= submit_tag 'Create link', class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+<% end %>
+
+<div id="short_link">
+</div>
